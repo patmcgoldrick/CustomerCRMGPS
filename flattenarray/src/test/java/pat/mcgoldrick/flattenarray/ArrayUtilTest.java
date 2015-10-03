@@ -43,7 +43,7 @@ public class ArrayUtilTest {
 		
 		List<Integer> resultArray = null;
 		try {
-			resultArray = arrayUtil.flattenArrray(listToFlatten);
+			resultArray = arrayUtil.flattenIntergerArrray(listToFlatten);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			assertTrue(false);
@@ -83,7 +83,7 @@ public class ArrayUtilTest {
 		
 		List<Integer> resultArray = null;
 		try {
-			resultArray = arrayUtil.flattenArrray(listToFlatten);
+			resultArray = arrayUtil.flattenIntergerArrray(listToFlatten);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			assertTrue(false);
@@ -105,7 +105,7 @@ public class ArrayUtilTest {
 		
 		List<Integer> resultArray = null;
 		try {
-			resultArray = arrayUtil.flattenArrray(null);
+			resultArray = arrayUtil.flattenIntergerArrray(null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			assertTrue(false);
@@ -119,7 +119,7 @@ public class ArrayUtilTest {
 		
 		List<Integer> resultArray = new ArrayList<Integer>();
 		try {
-			resultArray = arrayUtil.flattenArrray(null);
+			resultArray = arrayUtil.flattenIntergerArrray(null);
 		} catch (Exception e) {
 			// TODO Auto-generated catch block
 			assertTrue(false);
@@ -140,7 +140,7 @@ public class ArrayUtilTest {
 		sublist1.add(new Integer(5));
 		listToFlatten.add(sublist1);
 		
-		List<Integer> resultArray = arrayUtil.flattenArrray(listToFlatten);
+		List<Integer> resultArray = arrayUtil.flattenIntergerArrray(listToFlatten);
 		
 	}
 
