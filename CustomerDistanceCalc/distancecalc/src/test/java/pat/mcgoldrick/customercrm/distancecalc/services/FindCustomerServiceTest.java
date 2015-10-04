@@ -2,6 +2,7 @@ package pat.mcgoldrick.customercrm.distancecalc.services;
 
 import static org.junit.Assert.*;
 
+import java.io.IOException;
 import java.util.List;
 
 import org.junit.After;
@@ -24,8 +25,24 @@ public class FindCustomerServiceTest {
 
 	@Test
 	public void getCustomersByGPSCordinateTest_Dublin() {
-		List<Customer> customers = findCustomerService.getCustomersByGPSCordinate(new Double(53.3381985), new Double(-6.2592576), new Double(100));
+		List<Customer> customers = null;
+		try {
+			customers = findCustomerService.getCustomersByGPSCordinate(new Double(53.3381985), new Double(-6.2592576), new Double(100));
+		} catch (IOException e) {
+			fail("IOException thrown");
+		}
 		assertTrue(customers.size() == 16);
+	}
+	
+	@Test
+	public void getCustomersByGPSCordinateTest_Dublin_0km() {
+		List<Customer> customers = null;
+		try {
+			customers = findCustomerService.getCustomersByGPSCordinate(new Double(53.3381985), new Double(-6.2592576), new Double(0));
+		} catch (IOException e) {
+			fail("IOException thrown");
+		}
+		assertTrue(customers.size() == 0);
 	}
 
 }
